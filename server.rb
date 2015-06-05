@@ -19,7 +19,7 @@ java_import "io.netty.handler.codec.http.HttpResponseStatus"
 java_import "io.netty.handler.codec.http.HttpHeaders"
 java_import "io.netty.buffer.Unpooled"
 
-class MySuperHttpHandler < SimpleChannelInboundHandler
+class MyHttpHandler < SimpleChannelInboundHandler
 
   def channelReadComplete(ctx)
     ctx.flush
@@ -38,7 +38,7 @@ class MySuperHttpHandler < SimpleChannelInboundHandler
           HttpResponseStatus::CONTINUE))
       end
 
-      content = "Hello".to_java.getBytes
+      content = "Hello World".to_java.getBytes
 
       keepAlive = HttpHeaders.isKeepAlive(req);
       response = DefaultFullHttpResponse.new(
@@ -72,7 +72,7 @@ class MyChildHandler < ChannelInitializer
     p = ch.pipeline
     p.addLast(HttpRequestDecoder.new)
     p.addLast(HttpResponseEncoder.new)
-    p.addLast(MySuperHttpHandler.new)
+    p.addLast(MyHttpHandler.new)
   end
 end
 
@@ -86,7 +86,6 @@ begin
     .option(ChannelOption::SO_BACKLOG, java.lang.Integer.new("200"))
     .childOption(ChannelOption::ALLOCATOR, PooledByteBufAllocator::DEFAULT)
     .childHandler(MyChildHandler.new)
-
 
   port = ENV['PORT'] || 8080
   puts "Starting Netty server on port #{port}"
