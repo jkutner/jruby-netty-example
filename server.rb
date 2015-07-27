@@ -39,7 +39,7 @@ class MyHttpHandler < SimpleChannelInboundHandler
           HttpResponseStatus::CONTINUE))
       end
 
-      content = "Hello World".to_java.getBytes
+      content = "Hello from Netty!".to_java.getBytes
 
       keepAlive = HttpHeaders.isKeepAlive(req);
       response = DefaultFullHttpResponse.new(
