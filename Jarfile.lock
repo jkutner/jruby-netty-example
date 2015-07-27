@@ -1,0 +1,3 @@
+---
+:runtime:
+- io.netty:netty-all:jar:4.0.28.Final
