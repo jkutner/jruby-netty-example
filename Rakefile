@@ -1,3 +1,3 @@
 task "assets:precompile" do
-  `jbundle install --deployment`
+  `jbundle install --vendor`
 end
