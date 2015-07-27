@@ -3,6 +3,7 @@ require 'jbundler'
 
 java_import "io.netty.channel.SimpleChannelInboundHandler"
 java_import "io.netty.channel.ChannelInitializer"
+java_import "io.netty.channel.ChannelFutureListener"
 
 java_import "io.netty.channel.nio.NioEventLoopGroup"
 java_import "io.netty.bootstrap.ServerBootstrap"
