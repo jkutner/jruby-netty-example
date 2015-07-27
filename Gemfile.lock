@@ -1,0 +1,41 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    equalizer (0.0.11)
+    ice_nine (0.11.1)
+    jar-dependencies (0.1.15)
+    jbundler (0.8.0)
+      bundler (~> 1.5)
+      jar-dependencies (~> 0.1.15)
+      maven-tools (~> 1.0.11)
+      ruby-maven (~> 3.3, >= 3.3.3)
+    maven-tools (1.0.11)
+      virtus (~> 1.0)
+    rake (10.4.2)
+    ruby-maven (3.3.3)
+      ruby-maven-libs (~> 3.3.1)
+    ruby-maven-libs (3.3.3)
+    thread_safe (0.3.5-java)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  jbundler
+  rake
+
+BUNDLED WITH
+   1.10.6
